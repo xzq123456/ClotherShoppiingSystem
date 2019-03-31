@@ -96,7 +96,7 @@ public class HomeClass extends BaseClass {
         while(flag){
             printIn(getString("product.input.id"));
             String id = input.nextLine();
-            printIn(getString("product.input.shoppingNum");
+            printIn(getString("product.input.shoppingNum"));
             String shoppingNum=input.nextLine();
             OrderItem orderItem=new OrderItem();
             Clothes clothes=clothesService.findById(id);
@@ -123,7 +123,6 @@ public class HomeClass extends BaseClass {
                     flag = false;
                     break;
                     default:
-                        flag = false;
                         break;
             }
         }
