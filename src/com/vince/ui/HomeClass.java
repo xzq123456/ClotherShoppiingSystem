@@ -1,11 +1,22 @@
 package com.vince.ui;
 import com.vince.bean.Clothes;
+import com.vince.bean.Order;
+import com.vince.bean.OrderItem;
 import com.vince.service.ClothesService;
+import com.vince.service.OrderService;
 import com.vince.service.impl.ClothesServiceImpl;
+import com.vince.service.impl.OrderServiceImpl;
+import com.vince.utils.BusinessException;
 import com.vince.utils.ConsoleTable;
+import com.vince.utils.DateUtils;
+import  java.util.Date;
+
 import java.util.List;
 
 public class HomeClass extends BaseClass {
+    private OrderService orderService =new OrderServiceImpl();
+    private ClothesService  clothesService=new ClothesServiceImpl();
+
     public void show(){
          showProducts();
          printIn("welcome"+currentUser.getUsername());
@@ -24,8 +35,13 @@ public class HomeClass extends BaseClass {
                      flag=false;
                      break;
                  case "3"://购买
-                     buyProducts();
-                     flag=false;
+                     try {
+                         buyProducts();
+                         flag = false;
+
+                     }catch (BusinessException e){
+                         getString(e.getMessage());
+                     }
                      break;
                  case "0":
                      flag=false;
@@ -40,7 +56,6 @@ public class HomeClass extends BaseClass {
     }
 
     private void showProducts() {
-        ClothesService clothesService=new ClothesServiceImpl();
         List<Clothes> clothes=clothesService.list();
         ConsoleTable t = new ConsoleTable(8, true);
         t.appendRow();
@@ -72,8 +87,53 @@ public class HomeClass extends BaseClass {
     private void  findOrderById(){
 
     }
-    private  void buyProducts(){
+    private  void buyProducts() throws BusinessException {
+        //生成订单
+        boolean flag=true;
+        int count=1;//计数器
+        Order order=new Order();//生成的订单
+        float sum=0.0f;//总金额
+        while(flag){
+            printIn(getString("product.input.id"));
+            String id = input.nextLine();
+            printIn(getString("product.input.shoppingNum");
+            String shoppingNum=input.nextLine();
+            OrderItem orderItem=new OrderItem();
+            Clothes clothes=clothesService.findById(id);
+            int num=Integer.parseInt(shoppingNum);
+            if(num>clothes.getNum()){
+                   throw  new BusinessException("product.num.error");
+            }
+           //减库存
+            clothes.setNum(clothes.getNum()-num);
+        //一条订单明细
+            orderItem.setShoppingNum(num);
+            orderItem.setNum(clothes.getPrice()*num);
+            sum+=orderItem.getNum();
+            orderItem.setItemId(count++);
+            order.getOrderItemList().add(orderItem);
 
+            printIn(getString("product.buy.continue"));
+            String  isBuy=input.nextLine();
+            switch(isBuy) {
+                case "1":
+                    flag = true;
+                    break;
+                case "2":
+                    flag = false;
+                    break;
+                    default:
+                        flag = false;
+                        break;
+            }
+        }
+        order.setCreatDate(DateUtils.toDate(new Date()));
+        order.setUserId(currentUser.getId());
+        order.setNum(sum);
+        order.setOrderId(orderService.list().size()+1);
+        orderService.buyProducts(order);
+        clothesService.update();
+        showProducts();
     }
 
 }
