@@ -11,11 +11,11 @@ public class OrderIO {
   public void add(Order order) throws BusinessException{
         orders.add(order);
   }
-  //查询订单
+  //
   public List<Order> list() throws  BusinessException{
     return  orders;
   }
-   //
+   //查询订单
     public Order findOrderById(int orderId) throws BusinessException{
       Order order=null;
       int oid;

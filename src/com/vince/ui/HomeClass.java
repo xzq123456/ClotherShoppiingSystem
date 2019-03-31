@@ -19,7 +19,7 @@ public class HomeClass extends BaseClass {
 
     public void show(){
          showProducts();
-         printIn("welcome"+currentUser.getUsername());
+         printIn("welcome   "+currentUser.getUsername());
          boolean flag=true;
          while(flag){
              printIn(getString("home.function"));
