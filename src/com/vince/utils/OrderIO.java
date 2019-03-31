@@ -41,7 +41,7 @@ public class OrderIO {
     }
     public  boolean readorders(){
         try{
-            ObjectInputStream objectInputStream =new ObjectInputStream(new FileInputStream(ORDER_FILE))；
+            ObjectInputStream objectInputStream =new ObjectInputStream(new FileInputStream(ORDER_FILE));
             orders=(List<Order>)objectInputStream.readObject();
             objectInputStream.close();
             return true;
