@@ -15,9 +15,15 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public List<Order> list() throws BusinessException {
-        return orderIO.list();
+    public List<Order> list(String uid) throws BusinessException {
+        return orderIO.list(uid);
     }
+    public List<Order> list2() throws BusinessException {
+        return orderIO.list2();
+    }
+
+
+
 
     @Override
     public Order findById(int orderid) throws BusinessException {

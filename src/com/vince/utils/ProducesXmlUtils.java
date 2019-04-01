@@ -33,7 +33,7 @@ public class ProducesXmlUtils {
         try{
             BufferedOutputStream outputStream =
                     new BufferedOutputStream(new FileOutputStream("products2.xml"));
-        outputStream.write("<?xml version=\"1.0\" encodeing=\"utf-8\" ?>".getBytes());
+        outputStream.write("<?xml version=\"1.0\" encoding=\"utf-8\" ?>".getBytes());
         xStream.toXML(products,outputStream);
         outputStream.close();
         }catch (IOException e){

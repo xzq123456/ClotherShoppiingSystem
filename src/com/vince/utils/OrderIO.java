@@ -6,15 +6,27 @@ import java.util.List;
 
 public class OrderIO {
   private static List<Order> orders=new ArrayList<>();
+  private static List<Order> userOrders=new ArrayList<>();
   private static final String ORDER_FILE="order.obj";
  // 添加
   public void add(Order order) throws BusinessException{
         orders.add(order);
+        writeorders();
   }
-  //
-  public List<Order> list() throws  BusinessException{
-    return  orders;
+
+  public List<Order> list(String uid) throws  BusinessException{
+     readorders();
+     for(Order o:orders){
+         if(String.valueOf(o.getUserId()).equals(uid)){
+             userOrders.add(o);
+         }
+     }
+    return  userOrders;
   }
+    public List<Order> list2() throws  BusinessException{
+        readorders();
+        return  orders;
+    }
    //查询订单
     public Order findOrderById(int orderId) throws BusinessException{
       Order order=null;

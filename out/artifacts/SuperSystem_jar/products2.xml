@@ -1,21 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<list>
-    <clothes id="A0001">
-        <brand>Adi</brand>
-        <style>连衣裙</style>
-        <color>白色</color>
-        <size>S</size>
-        <num>4</num>
-        <price>199</price>
-        <description>夏季五分袖连衣裙</description>
-    </clothes>
-    <clothes id="A0002">
-        <brand>Adi</brand>
-        <style>被花裙</style>
-        <color>黑色</color>
-        <size>S</size>
-        <num>11</num>
-        <price>299</price>
-        <description>夏季五分袖被花裙</description>
-    </clothes>
+<?xml version="1.0" encodeing="utf-8" ?><list>
+  <clothes id="A0001">
+    <brand>Adi</brand>
+    <style>����ȹ</style>
+    <color>��ɫ</color>
+    <size>S</size>
+    <num>3</num>
+    <price>199.0</price>
+    <description>�ļ����������ȹ</description>
+  </clothes>
+  <clothes id="A0002">
+    <brand>Adi</brand>
+    <style>����ȹ</style>
+    <color>��ɫ</color>
+    <size>S</size>
+    <num>11</num>
+    <price>299.0</price>
+    <description>�ļ�����䱻��ȹ</description>
+  </clothes>
 </list>
