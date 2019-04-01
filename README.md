@@ -7,3 +7,4 @@
 3.查看订单明细
 
 1.用户登陆注册功能：
+ ![image](https://github.com/xzq123456/ClotherShoppiingSystem/blob/master/images/%E6%B3%A8%E5%86%8C.png)
