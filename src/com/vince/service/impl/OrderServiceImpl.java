@@ -21,10 +21,6 @@ public class OrderServiceImpl implements OrderService{
     public List<Order> list2() throws BusinessException {
         return orderIO.list2();
     }
-
-
-
-
     @Override
     public Order findById(int orderid) throws BusinessException {
         return orderIO.findOrderById(orderid);

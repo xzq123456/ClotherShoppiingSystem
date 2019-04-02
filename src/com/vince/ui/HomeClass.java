@@ -12,7 +12,7 @@ import com.vince.utils.DateUtils;
 import  java.util.Date;
 
 import java.util.List;
-
+//登陆后的界面
 public class HomeClass extends BaseClass {
     private OrderService orderService =new OrderServiceImpl();
     private ClothesService  clothesService=new ClothesServiceImpl();
@@ -126,7 +126,9 @@ public class HomeClass extends BaseClass {
         order.setUserId(currentUser.getId());
         order.setNum(sum);
         order.setOrderId(orderService.list2().size()+1);
+        //生成订单
         orderService.buyProducts(order);
+        //对商品的xml文件进行更新
         clothesService.update();
         menu();
     }

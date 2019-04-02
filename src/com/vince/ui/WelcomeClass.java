@@ -6,6 +6,7 @@ import com.vince.utils.UserIO;
 public class WelcomeClass extends BaseClass {
   public void start(){
       printIn(getString("info.welcome"));
+      //将存放对象的user.obj读入，用来做登陆验证
       UserIO userIO=new UserIO();
       userIO.readUsers();
       boolean flag=true;
@@ -21,7 +22,7 @@ public class WelcomeClass extends BaseClass {
                      flag=false;
                      printIn("login.success");
                  }catch (BusinessException e){
-                   printIn(getString(e.getMessage()));
+                     printIn(getString("login.error"));
                  }
                   break;
               case "2":
@@ -30,7 +31,7 @@ public class WelcomeClass extends BaseClass {
                    try{
                        new RegisterClass().register();
                        printIn("reg.success");
-                       flag=false;
+                       flag=true;
                    }catch(BusinessException e){
                        printIn(getString("reg.error"));
                    }

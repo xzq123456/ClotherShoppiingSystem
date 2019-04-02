@@ -3,10 +3,10 @@ package com.vince.bean;
 import java.io.Serializable;
 //明细表
 public class OrderItem  implements Serializable {
-    private int itemId;
-    private Clothes clothes;//商品
+    private int itemId;//明细ID
+    private Clothes clothes;//商品 (每条明细里都有商品)
     private  int shoppingNum;//购买数量
-    private float num;//购买金额
+    private float num;//该明细的购买总金额
 
     public OrderItem(int itemId, Clothes clothes, int shoppingNum, float num) {
         this.itemId = itemId;

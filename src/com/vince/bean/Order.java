@@ -9,12 +9,12 @@ import java.util.List;
 * 订单表  由明细表构成
 * */
 public class Order implements Serializable{
-    private int orderId;
-    private List<OrderItem> orderItemList=new ArrayList<>();
-    private String creatDate;
+    private int orderId;//订单ID
+    private List<OrderItem> orderItemList=new ArrayList<>();//明细表
+    private String creatDate;//创建时间
     private float num;//总金额
-    private OrderStatusType status= OrderStatusType.UNPAID;//枚举类型
-    private int userId;
+    private OrderStatusType status= OrderStatusType.UNPAID;//支付情况(枚举类型)
+    private int userId;//用户ID
     public OrderStatusType getStatus() {
         return status;
     }
