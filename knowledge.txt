@@ -1,0 +1,7 @@
+git通过做这个小的系统，可以学到很多的只是，只是掌握零碎的知识是不行的，要多动手实践
+1.使用Maven进行项目依赖导入 不用麻烦自己去下jar包
+2.java基础 发现集合用的挺多 ArrayList
+3.xml 解析文件  序列化 对象流
+4.最重要的是系统设计 service  view(ui) 和持久化文件 Dao(本次并没有用数据库，而是用的文件保存信息)
+5.util包 res（国际化） bean(对象) test(Junit 测试) MainClass入口文件
+6 git的使用  关联github  真的好用  省去很多时间  以后就用git  idea是真的好用

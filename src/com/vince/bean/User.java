@@ -1,11 +1,11 @@
 package com.vince.bean;
 
 import java.io.Serializable;
-
+//用户表
 public class User implements Serializable {
-    private int id;
-    private String username;
-    private String password;
+    private int id;//用户ID
+    private String username;//用户名
+    private String password;//密码
 
     public User(int id, String username, String password) {
         this.id = id;

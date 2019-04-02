@@ -1,9 +1,12 @@
 package com.vince.bean;
 
 import java.io.Serializable;
-
+/*
+ 衣服类
+ 所有的类都要写文件  所以要求序列化
+* */
 public class Clothes implements Serializable {
-    private String id;//id
+    private String id;//id  A001
     private String brand;//品牌
     private String style;//款式
     private  String color;//颜色
