@@ -23,4 +23,4 @@
   5.根据订单id查找某个订单
  ![image](https://github.com/xzq123456/ClotherShoppiingSystem/blob/master/images/%E6%9F%A5%E8%AF%A2%E8%AE%A2%E5%8D%95.png)
  
- 目前先写这么多，后续会把把文件目录介绍和注释添加上
+注释也已经加上去了
